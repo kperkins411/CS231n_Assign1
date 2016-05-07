@@ -1,9 +1,9 @@
 import numpy as np
 from unittest import TestCase
 from unittest import main
-from cs231n.classifiers.softmax import softmax_loss_naive
-from cs231n.classifiers.softmax import softmax_loss_vectorized
-from cs231n.classifiers.softmax import softmax_loss_vectorized1
+from classifiers.softmax import softmax_loss_naive
+from classifiers.softmax import softmax_loss_vectorized
+from classifiers.softmax import softmax_loss_vectorized1
 
 
 #see http://cs231n.github.io/linear-classify/#svmvssoftmax for these sample matrices
@@ -53,8 +53,8 @@ class TestSoftmax_loss_naive(TestCase):
     def test_both_softmax_loss_vectorized(self):
         loss,dw = softmax_loss_vectorized(self.W, self.X, self.y, self.reg)
         loss1,dw1 = softmax_loss_vectorized1(self.W, self.X, self.y, self.reg)
-        self.assertLess((loss-loss1),1e-4,"Losses are off")
-        self.assertLess( (dw-dw1).sum(),1e-4,"Vectors are off")
+        self.assertLess((loss-loss1),1e-3,"Losses are off")
+        self.assertLess( (dw-dw1).sum(),1e-3,"Vectors are off")
 
 
 

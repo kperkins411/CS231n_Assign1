@@ -8,11 +8,11 @@ from unittest import TestCase
 import matplotlib.pyplot as plt
 import numpy as np
 
-from cs231n.examples.TwoLayer_Neural_Sigmoid_Softmax_BintoDec import TwoLayer_Neural_Sigmoid_Softmax_BintoDec
+from examples.TwoLayer_Neural_Sigmoid_Softmax_BintoDec import TwoLayer_Neural_Sigmoid_Softmax_BintoDec
 
 
 class TestBintoDec(TestCase):
-    MIN_ACCEPTABLE_ERROR = 1e-2
+    MIN_ACCEPTABLE_ERROR = 1e-1
     myclass = None
 
     @classmethod

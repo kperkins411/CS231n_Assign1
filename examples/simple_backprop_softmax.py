@@ -8,7 +8,7 @@ __credits__  = "basic-python-network  on iamtrask"
 
 
 import numpy as np
-import cs231n.classifiers.softmax as sm
+import classifiers.softmax as sm
 
 X= np.array([ [0,0,0], [0,0,1], [0,1,0], [0,1,1], [1,0,0], [1,0,1], [1,1,0], [1,1,1] ])
 y = np.array([0,1,2,3,4,5,6,7])
