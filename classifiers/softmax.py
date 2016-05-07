@@ -55,8 +55,9 @@ def softmax_loss_naive(W, X, y, reg):
 def softmax_loss_vectorized(W, X, y, reg):
     num_train = X.shape[0]
 
-    normalized_scores = softmax_get_normalized_scores(X, W)
-    data_loss = softmax_get_data_loss(normalized_scores, num_train, y)
+    scores = softmax_get_UNnormalized_scores(X, W)
+    normalized_scores = softmax_get_normalized_scores(scores)
+    data_loss = softmax_get_data_loss(normalized_scores, num_train, y,reg,W)
     reg_loss = softmax_get_reg_loss(W, reg)
     loss =  data_loss + reg_loss
 
@@ -64,8 +65,7 @@ def softmax_loss_vectorized(W, X, y, reg):
     dW = softmax_get_dW(X,W,dScores,reg)
     return (loss,dW)
 
-
-def softmax_get_normalized_scores(X, W):
+def softmax_get_UNnormalized_scores(X, W):
     """
     :param X: (N,D) inputs
     :param W: (D,C) outputs
@@ -73,7 +73,14 @@ def softmax_get_normalized_scores(X, W):
 
     each row adds to 1
     """
-    scores = np.dot(X, W)
+    return np.dot(X, W)
+
+def softmax_get_normalized_scores(scores):
+    '''
+
+    :param scores: unnormalized scores
+    :return: normalized scores
+    '''
     scores -= np.max(scores)  # stability adjust, subtract the largest value from each row
 
     # raise all values to e to get unnormalized probabilities(up)
@@ -87,7 +94,7 @@ def softmax_get_normalized_scores(X, W):
     return np.divide(un_p, un_p_row_sum)
 
 
-def softmax_get_data_loss(norm_scores, num_train, y):
+def softmax_get_data_loss(norm_scores, num_train, y,reg, W1, W2=None):
     """
     :param norm_scores: (N,C) number examples, class scores for each ex
     :param num_train: (scaler)
@@ -99,13 +106,18 @@ def softmax_get_data_loss(norm_scores, num_train, y):
         raise ValueError("No correct values in y, cannot calculate loss and dW")
 
     # make (N,1) list of correct probs
-    y_norm_p = norm_scores[range(num_train), y]
+    corect_logprobs  = norm_scores[range(num_train), y]
 
     # row adds up to 1 since I normalized fe_row_sum, so I dont have
     # to divide expression in () belowby np.sum(fe,axis=1)
     # notice that the loss is calculated ONLY using the correct loc
-    loss = -np.log(y_norm_p)
-    return np.sum(loss) / num_train  # average over number samples
+    tmp = -np.log(corect_logprobs )
+    data_loss = (np.sum(tmp))/ num_train
+    reg_loss = 0.5*reg*np.sum(W1*W1)
+    if W2 is not None:
+        reg_loss += 0.5*reg*np.sum(W2*W2)
+    loss = data_loss + reg_loss
+    return loss  # average over number samples
 
 def softmax_get_reg_loss(W, reg):
     """
@@ -123,7 +135,7 @@ def get_dScores(normalized_scores, num_train,y):
     :return: (N,C)
     """
     # start with normalized probs (each row adds to 1)
-    dscores = normalized_scores
+    dscores = np.copy(normalized_scores)
 
     # subtract 1 from correct class score
     dscores[range(num_train), y] -= 1
