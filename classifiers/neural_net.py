@@ -180,7 +180,8 @@ class TwoLayerNet(object):
     #############################################################################
     #try this way, saves creating vecclamp time and mem
     #compute input*hidden layer
-    H1=relu(np.dot(X,W1)+b1.T)   #ReLu activation
+    z1 = X.dot(W1) + b1.T
+    H1 = relu(z1)
 
     #now this mult the HL (N,H) matrix by W2 (H,C) to get (N,C)
     #now get the raw scores
@@ -215,11 +216,13 @@ class TwoLayerNet(object):
     # b2 += -.5*reg*db2
 
     #get hidden layer gradient, d (3x)/dx = 3, if relu >0 then multiply 1 by coefficient
-    dH1 = np.dot(dscores,W2.T) * H1
+    dH1 = np.dot(dscores,W2.T) * ((z1 >= 0).astype(float))
     dW1 = np.dot(X.T, dH1)
-    dW1 /=num_train
+    # dW1 /=num_train
     dW1 += reg * W1
 
+    # print ("neural_net1 causes -7.30238520e-02")
+    # print (dW1)
     db1 = np.sum(dH1, axis=0, keepdims=True)
 
     # W1 += -.5*reg*dW1
