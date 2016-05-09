@@ -189,11 +189,11 @@ class TwoLayerNet(object):
     H1 = relu(z1)
 
     #lets apply dropout
-    #p=1  #no dropout val = .386
-    p= .87
+    #p=1     #no dropout validation accuracy (val) = .386
+    p= .87   #val = .392
     #p= .75  #val = .39
-    #p=.5   #validation accuracy goes down .375
-    #p=.25   #goes down to .365
+    #p=.5    #val = .375
+    #p=.25   #val = .365
   
     U1 = (np.random.rand(*H1.shape) < p)/p
     H1 *=U1
