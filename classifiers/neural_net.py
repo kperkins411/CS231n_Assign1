@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import math as mth
 from classifiers.softmax import *
 
 relu = lambda x: x * (x >= 0).astype(float)
@@ -35,9 +36,13 @@ class TwoLayerNet(object):
     - output_size: The number of classes C.
     """
     self.params = {}
-    self.params['W1'] = std * np.random.randn(input_size, hidden_size)
+    #reLU divide by sqrt(2/fan_in)  works well but kills structure in visualized W1 matrix
+    self.params['W1'] = std * np.random.randn(input_size, hidden_size)/mth.sqrt(2.0/input_size)
+    #self.params['W1'] = std * np.random.randn(input_size, hidden_size)   #orig use this to get same answer as ipynb 
     self.params['b1'] = np.zeros(hidden_size)
-    self.params['W2'] = std * np.random.randn(hidden_size, output_size)
+    #divide by sqrt(fan_in) for non reLu  works well but kills structure in visualized W1 matrix
+    self.params['W2'] = std * np.random.randn(hidden_size, output_size)/mth.sqrt(hidden_size)
+    #self.params['W2'] = std * np.random.randn(hidden_size, output_size)   #orig use this to get same answer as ipynb
     self.params['b2'] = np.zeros(output_size)
 
 
@@ -183,7 +188,17 @@ class TwoLayerNet(object):
     z1 = X.dot(W1) + b1.T
     H1 = relu(z1)
 
-    #now this mult the HL (N,H) matrix by W2 (H,C) to get (N,C)
+    #lets apply dropout
+    #p=1  #no dropout val = .386
+    p= .87
+    #p= .75  #val = .39
+    #p=.5   #validation accuracy goes down .375
+    #p=.25   #goes down to .365
+  
+    U1 = (np.random.rand(*H1.shape) < p)/p
+    H1 *=U1
+    
+    #now this mult the H1 (N,H) matrix by W2 (H,C) to get (N,C)
     #now get the raw scores
     scoresUnNorm=np.dot(H1,W2)+b2.T
 
@@ -209,7 +224,7 @@ class TwoLayerNet(object):
     dscores =  get_dScores(scores, num_train,y)
 
     dW2= np.dot(H1.T, dscores)
-    dW2 += reg * W2
+    dW2 += reg * W2   #d( (1/2)*reg*W**2)/dw = reg*W 
     db2 = np.sum(dscores, axis=0, keepdims=True)
 
     # W2 += -.5*reg*dW2
@@ -217,6 +232,10 @@ class TwoLayerNet(object):
 
     #get hidden layer gradient, d (3x)/dx = 3, if relu >0 then multiply 1 by coefficient
     dH1 = np.dot(dscores,W2.T) * ((z1 >= 0).astype(float))
+    
+    #dont count dropped neuron contributions
+    dH1 *= U1
+    
     dW1 = np.dot(X.T, dH1)
     # dW1 /=num_train
     dW1 += reg * W1
