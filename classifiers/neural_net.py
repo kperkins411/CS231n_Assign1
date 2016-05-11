@@ -34,6 +34,9 @@ class TwoLayerNet(object):
     - input_size: The dimension D of the input data.
     - hidden_size: The number of neurons H in the hidden layer.
     - output_size: The number of classes C.
+    - std - way to scale weights the default KILLED learning on the HOG and color histogram
+            classifier for features.ipynb, they were so small that few changes ever occurred
+            So adjust up in general (.01 worked) 
     """
     self.params = {}
     if use_smart_w1_init == True:
@@ -125,6 +128,8 @@ class TwoLayerNet(object):
     #compute the loss
     loss = softmax_get_data_loss(scores, num_train, y,reg,W1, W2)
 
+    #import pdb; pdb.set_trace()
+    
     #compute the gradient for softmax
     dscores =  get_dScores(scores, num_train,y)
 
