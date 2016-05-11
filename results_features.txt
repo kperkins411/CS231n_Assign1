@@ -1,0 +1,114 @@
+Attempt 0, 1000 iterations, Validation accuracy = 0.55
+Attempt 1, 1000 iterations, Validation accuracy = 0.55
+Attempt 2, 1000 iterations, Validation accuracy = 0.52
+Attempt 3, 1000 iterations, Validation accuracy = 0.51
+Attempt 4, 1000 iterations, Validation accuracy = 0.47
+Attempt 5, 1000 iterations, Validation accuracy = 0.48
+Attempt 6, 1000 iterations, Validation accuracy = 0.54
+Attempt 7, 1000 iterations, Validation accuracy = 0.44
+Attempt 8, 1000 iterations, Validation accuracy = 0.52
+Attempt 9, 1000 iterations, Validation accuracy = 0.51
+Attempt 10, 1000 iterations, Validation accuracy = 0.51
+Attempt 11, 1000 iterations, Validation accuracy = 0.49
+Attempt 12, 1000 iterations, Validation accuracy = 0.52
+Attempt 13, 1000 iterations, Validation accuracy = 0.54
+Attempt 14, 1000 iterations, Validation accuracy = 0.47
+Attempt 15, 1000 iterations, Validation accuracy = 0.51
+Attempt 16, 1000 iterations, Validation accuracy = 0.51
+Attempt 17, 1000 iterations, Validation accuracy = 0.49
+Attempt 18, 1000 iterations, Validation accuracy = 0.45
+Attempt 19, 1000 iterations, Validation accuracy = 0.57
+Attempt 20, 1000 iterations, Validation accuracy = 0.58
+Attempt 21, 1000 iterations, Validation accuracy = 0.49
+Attempt 22, 1000 iterations, Validation accuracy = 0.49
+Attempt 23, 1000 iterations, Validation accuracy = 0.51
+Attempt 24, 1000 iterations, Validation accuracy = 0.53
+Attempt 25, 1000 iterations, Validation accuracy = 0.48
+Attempt 26, 1000 iterations, Validation accuracy = 0.53
+Attempt 27, 1000 iterations, Validation accuracy = 0.51
+Attempt 28, 1000 iterations, Validation accuracy = 0.49
+Attempt 29, 1000 iterations, Validation accuracy = 0.5
+Attempt 30, 1000 iterations, Validation accuracy = 0.48
+Attempt 31, 1000 iterations, Validation accuracy = 0.41
+Attempt 32, 1000 iterations, Validation accuracy = 0.55
+Attempt 33, 1000 iterations, Validation accuracy = 0.49
+Attempt 34, 1000 iterations, Validation accuracy = 0.48
+Attempt 35, 1000 iterations, Validation accuracy = 0.48
+Attempt 36, 1000 iterations, Validation accuracy = 0.53
+Attempt 37, 1000 iterations, Validation accuracy = 0.47
+Attempt 38, 1000 iterations, Validation accuracy = 0.49
+Attempt 39, 1000 iterations, Validation accuracy = 0.49
+Attempt 40, 1000 iterations, Validation accuracy = 0.56
+Attempt 41, 1000 iterations, Validation accuracy = 0.55
+Attempt 42, 1000 iterations, Validation accuracy = 0.48
+Attempt 43, 1000 iterations, Validation accuracy = 0.48
+Attempt 44, 1000 iterations, Validation accuracy = 0.48
+Attempt 45, 1000 iterations, Validation accuracy = 0.49
+Attempt 46, 1000 iterations, Validation accuracy = 0.48
+Attempt 47, 1000 iterations, Validation accuracy = 0.48
+Attempt 48, 1000 iterations, Validation accuracy = 0.52
+Attempt 49, 1000 iterations, Validation accuracy = 0.52
+Attempt 50, 1000 iterations, Validation accuracy = 0.49
+Attempt 51, 1000 iterations, Validation accuracy = 0.53
+Attempt 52, 1000 iterations, Validation accuracy = 0.5
+Attempt 53, 1000 iterations, Validation accuracy = 0.47
+Attempt 54, 1000 iterations, Validation accuracy = 0.49
+Attempt 55, 1000 iterations, Validation accuracy = 0.51
+Attempt 56, 1000 iterations, Validation accuracy = 0.52
+Attempt 57, 1000 iterations, Validation accuracy = 0.49
+Attempt 58, 1000 iterations, Validation accuracy = 0.45
+Attempt 59, 1000 iterations, Validation accuracy = 0.52
+Attempt 60, 1000 iterations, Validation accuracy = 0.48
+Attempt 61, 1000 iterations, Validation accuracy = 0.53
+Attempt 62, 1000 iterations, Validation accuracy = 0.51
+Attempt 63, 1000 iterations, Validation accuracy = 0.47
+Attempt 64, 1000 iterations, Validation accuracy = 0.5
+Attempt 65, 1000 iterations, Validation accuracy = 0.48
+Attempt 66, 1000 iterations, Validation accuracy = 0.46
+Attempt 67, 1000 iterations, Validation accuracy = 0.52
+Attempt 68, 1000 iterations, Validation accuracy = 0.48
+Attempt 69, 1000 iterations, Validation accuracy = 0.5
+Attempt 70, 1000 iterations, Validation accuracy = 0.48
+Attempt 71, 1000 iterations, Validation accuracy = 0.52
+Attempt 72, 1000 iterations, Validation accuracy = 0.5
+Attempt 73, 1000 iterations, Validation accuracy = 0.47
+Attempt 74, 1000 iterations, Validation accuracy = 0.48
+Attempt 75, 1000 iterations, Validation accuracy = 0.46
+Attempt 76, 1000 iterations, Validation accuracy = 0.51
+Attempt 77, 1000 iterations, Validation accuracy = 0.49
+Attempt 78, 1000 iterations, Validation accuracy = 0.5
+Attempt 79, 1000 iterations, Validation accuracy = 0.52
+Attempt 80, 1000 iterations, Validation accuracy = 0.49
+Attempt 81, 1000 iterations, Validation accuracy = 0.49
+Attempt 82, 1000 iterations, Validation accuracy = 0.43
+Attempt 83, 1000 iterations, Validation accuracy = 0.44
+Attempt 84, 1000 iterations, Validation accuracy = 0.52
+Attempt 85, 1000 iterations, Validation accuracy = 0.53
+Attempt 86, 1000 iterations, Validation accuracy = 0.48
+Attempt 87, 1000 iterations, Validation accuracy = 0.45
+Attempt 88, 1000 iterations, Validation accuracy = 0.5
+Attempt 89, 1000 iterations, Validation accuracy = 0.48
+Attempt 90, 1000 iterations, Validation accuracy = 0.51
+Attempt 91, 1000 iterations, Validation accuracy = 0.53
+Attempt 92, 1000 iterations, Validation accuracy = 0.47
+Attempt 93, 1000 iterations, Validation accuracy = 0.49
+Attempt 94, 1000 iterations, Validation accuracy = 0.51
+Attempt 95, 1000 iterations, Validation accuracy = 0.46
+Attempt 96, 1000 iterations, Validation accuracy = 0.49
+Attempt 97, 1000 iterations, Validation accuracy = 0.46
+Attempt 98, 1000 iterations, Validation accuracy = 0.53
+Attempt 99, 1000 iterations, Validation accuracy = 0.52
+
+Best predicted accuracy is : 0.58
+Best hidden_size is        : 1500
+Best dropout_prob is       : 0.64
+Best learning_rate is      : 0.703479541115
+Best batch_size is         : 115
+Best learning_rate_decay is: 0.95
+Best Reg is                : 0.00052
+
+Hyperparameter selection took 48.3034022133 minutes
+
+After 2000 iterations using best hyperparameters, Validation accuracy = 0.594
+
+Total time 49.3272217989 minutes
