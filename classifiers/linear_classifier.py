@@ -1,6 +1,6 @@
 import numpy as np
-from cs231n.classifiers.linear_svm import *
-from cs231n.classifiers.softmax import *
+from classifiers.linear_svm import *
+from classifiers.softmax import *
 
 class LinearClassifier(object):
 
@@ -106,9 +106,9 @@ class LinearClassifier(object):
     #this finds the C prediction values for each N samples
     #wind up with (N,D) matrix
     preds = np.dot(X,self.W)
-    print 'preds shape is ' + str(preds.shape)
+    #print 'preds shape is ' + str(preds.shape)
     y_pred = np.argmax(preds,axis=1)
-    print 'y_pred shape is ' + str(y_pred.shape)
+    #print 'y_pred shape is ' + str(y_pred.shape)
 
     #now find the location of the max column in each row
 
